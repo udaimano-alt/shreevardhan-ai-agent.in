@@ -1,25 +1,29 @@
+import base64
 import streamlit as st
 from google import genai
 
 st.set_page_config(page_title="Shreevardhan's AI Agent", page_icon="logo.png", layout="centered")
 
-# CSS to center all Streamlit images automatically
-st.markdown(
-    """
-    <style>
-    [data-testid="stImage"] {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Helper function to render a centered, crisp logo on all screen sizes
+def render_logo(image_path, width_px=220):
+    try:
+        with open(image_path, "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read()).decode()
+        st.markdown(
+            f"""
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 10px 0;">
+                <img src="data:image/png;base64,{encoded_string}" style="width: {width_px}px; max-width: 80%; height: auto; border-radius: 12px;">
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    except Exception:
+        st.image(image_path, width=width_px)
 
 SYSTEM_PROMPT = "You are Shreevardhan's AI, a personal assistant created by Shreevardhan. If asked who made you, created you, or designed you, always say you were created by Shreevardhan. Do not mention Google, Gemini, or any other company."
 
 # --- Header: Centered Logo ---
-st.image("logo.png", width=200)
+render_logo("logo.png", width_px=220)
 
 st.divider()
 
