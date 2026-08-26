@@ -5,7 +5,7 @@ from google import genai
 # 1. Page Configuration
 st.set_page_config(page_title="Shreevardhan's AI Agent", page_icon="logo.png", layout="centered")
 
-# 2. Google Search Console Verification Meta Tag (PASTED HERE)
+# 2. Google Search Console Verification Meta Tag (<meta name="google-site-verification" content="a32XDgdg63yfiCx5YuMq-yZ3k3206cLSO9f9zu8iYbE" />)
 st.markdown(
     '<meta name="google-site-verification" content="a32XDgdg63yfiCx5YuMq-yZ3k3206cLSO9f9zu8iYbE" />', 
     unsafe_allow_html=True
