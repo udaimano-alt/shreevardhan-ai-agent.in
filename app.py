@@ -1,9 +1,3 @@
-<html>
-<head>
-<title>https://shreevardhan-ai-agentin-ajka7il36xov6qkg9sqezc.streamlit.app/ homepage</title>
-<meta name="google-site-verification" content="<meta name="google-site-verification" content="<meta name="google-site-verification" content="a32XDgdg63yfiCx5YuMq-yZ3k3206cLSO9f9zu8iYbE" /> 
-</head>
-</body>
 import base64
 import json
 import os
