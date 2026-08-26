@@ -1,10 +1,18 @@
 import streamlit as st
 from google import genai
 
-st.set_page_config(page_title="Shreevardhan's AI", page_icon="🤖")
-st.title("Shreevardhan's AI")
+st.set_page_config(page_title="Shreevardhan's AI Agent", page_icon="logo.png", layout="centered")
 
 SYSTEM_PROMPT = "You are Shreevardhan's AI, a personal assistant created by Shreevardhan. If asked who made you, created you, or designed you, always say you were created by Shreevardhan. Do not mention Google, Gemini, or any other company."
+
+# --- Header with logo ---
+col1, col2 = st.columns([1, 3])
+with col1:
+    st.image("logo.png", width=100)
+with col2:
+    st.markdown("## Shreevardhan's AI Agent")
+
+st.divider()
 
 def get_client():
     return genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
