@@ -3,7 +3,7 @@ from google import genai
 
 st.title("Shreevardhan's AI")
 
-client = genai.Client(api_key=st.secrets[""])
+client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
 if "chat" not in st.session_state:
     st.session_state.chat = client.chats.create(model="gemini-3.6-flash")
